@@ -31,6 +31,9 @@ public class Package {
 	@Column(name="package_name",nullable = false)
 	private String packageName;
 	
+	@Column(name="package_type")
+	private String packageType;
+	
 	@Column(name="description")
 	private String description;
 	
@@ -43,24 +46,6 @@ public class Package {
 	@Column(name="package_display_priority")
 	private String packageDisplayPriority;
 	
-	@Column(name="purchase_status")
-	private String purchaseStatus;
-	
-	@Column(name="purchased_plan_type")
-	private String purchasedPlanType;
-	
-	@Column(name="purchased_plan_upgradeable")
-	private Boolean purchasedPlanUpgradeable;
-	
-	@Column(name="plan_id_that_is_upgradeable_to")
-	private Integer planIdThatIsUpgradeableTo;
-	
-	@Column(name="purchased_plan_subscription_expiration_date")
-	private Date purchasedPlanSubscriptionExpirationDate;
-	
-	@Column(name="purchased_plan_usage_count_remaining")
-	private Integer purchasedPlanUsageCountRemaining;
-
 	
 	public Package() {
 		

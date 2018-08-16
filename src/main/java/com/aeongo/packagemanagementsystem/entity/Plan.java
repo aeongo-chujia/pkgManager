@@ -40,32 +40,26 @@ public class Plan {
 	@Column(name="description")
 	private String description;
 	
+	@Column(name="duration")
+	private Integer duration;
+	
 	@Column(name="short_description")
 	private String shortDescription;
 	
 	@Column(name="picture")
 	private String picture;
 	
-	@Column(name="price")
-	private BigDecimal price;
-	
 	@Column(name="plan_display_priority")
 	private String planDisplayPriority;
 	
-	@Column(name="plan_subscription_expiration_date")
-	private Date planSubscriptionExpirationDate;
-	
-	@Column(name="usage_count")
-	private Integer usageCount;
-	
-	@Column(name="usage_count_remaining")
-	private Integer usageCountRemaining;
-	
-	@Column(name="purchase_status")
-	private String purchaseStatus;
-	
 	@Column(name="active_status")
 	private String activeStatus;
+	
+	@Column(name="plan_upgradeable")
+	private Boolean planUpgradeable;
+	
+	@Column(name="plan_id_that_is_upgradeable_to")
+	private Integer planIdThatIsUpgradeableTo;
 	
 	
 	public Plan() {

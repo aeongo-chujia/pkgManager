@@ -40,17 +40,6 @@ public class Service {
 	@Column(name="service_display_priority")
 	private String serviceDisplayPriority;
 	
-	@Column(name="purchase_status")
-	private String purchaseStatus;
-	
-	@Column(name="service_expiration_date")
-	private Date serviceExpirationDate;
-
-	@Column(name="service_count")
-	private Integer serviceCount;
-	
-	@Column(name="usage_remaining")
-	private Integer usageRemaining;
 	
 	public Service() {
 		
