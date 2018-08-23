@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 
+import org.json.JSONArray;
+
 import lombok.Data;
 
 @Data
@@ -31,6 +33,7 @@ public class PackageResponse {
 	private Integer planIdThatIsUpgradeableTo;
 	private Date purchasedPlanSubscriptionExpirationDate;
 	private Integer purchasedPlanUsageCountRemaining;
+	private JSONArray purchasedPlans;
 	private List<Plan> plans;
 	
 	@Data

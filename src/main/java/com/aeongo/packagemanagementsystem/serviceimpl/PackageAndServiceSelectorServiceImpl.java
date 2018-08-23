@@ -7,7 +7,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.aeongo.packagemanagementsystem.dao.PackageDao;
+import com.aeongo.packagemanagementsystem.dao.PkgMngDao;
 import com.aeongo.packagemanagementsystem.dao.ServiceDao;
+import com.aeongo.packagemanagementsystem.entity.PackageInfo;
+import com.aeongo.packagemanagementsystem.entity.Plan;
+import com.aeongo.packagemanagementsystem.entity.PlanUsage;
+import com.aeongo.packagemanagementsystem.response.PackageResponse;
 import com.aeongo.packagemanagementsystem.response.PackageSelectorResponse;
 import com.aeongo.packagemanagementsystem.response.ServiceSelectorResponse;
 import com.aeongo.packagemanagementsystem.service.PackageAndServiceSelectorService;
@@ -25,6 +30,7 @@ public class PackageAndServiceSelectorServiceImpl implements PackageAndServiceSe
 	@Autowired
 	private PackageDao packageDao;
 	
+	@Autowired PkgMngDao pkgMngDao;
 	
 	/** 
 	* @Title: Mental Health Service Selector
@@ -93,5 +99,12 @@ public class PackageAndServiceSelectorServiceImpl implements PackageAndServiceSe
 		//return new PackageSelectorResponse(packages, expirationDate);
 		return null;
 	}
-
+	public PackageResponse packageDetailInfo(Integer packageId, Integer patientId, Integer doctorId) {
+		PackageResponse res = new PackageResponse();
+		List<PackageInfo> packageInfos = pkgMngDao.getPackageInfo(packageId,doctorId);
+		List<Integer> packagePlans = pkgMngDao.getPlanIdsByPackageId(packageId);
+		List<PlanUsage> purchasedPlans = pkgMngDao.getPurchasedPlans(doctorId, patientId, packagePlans);
+		
+		return res;
+	}
 }
