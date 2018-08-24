@@ -30,9 +30,13 @@ public class InternalApiController {
 			@RequestParam(name = "packageId", required = true) Integer packageId,
 			@RequestParam(name = "planId", required = true) Integer planId,
 			@RequestParam(name = "serviceId", required = true) Integer serviceId,
+			@RequestParam(name = "doctorId", required = false) Integer doctorId,
 			@RequestParam(name = "serviceCount", required = true) Integer serviceCount,
 			@RequestParam(name = "access_token", required = true) String access_token){
-		return null;
+		GeneralResponse response = new GeneralResponse<>();
+		response.setMsg("report success");
+		response.setStatus(0);
+		return response;
 	}
 	
 	
@@ -51,8 +55,13 @@ public class InternalApiController {
 			@RequestParam(name = "packageId", required = true) Integer packageId,
 			@RequestParam(name = "planId", required = true) Integer planId,
 			@RequestParam(name = "serviceId", required = true) Integer serviceId,
+			@RequestParam(name = "doctorId", required = false) Integer doctorId,
 			@RequestParam(name = "access_token", required = true) String access_token){
-		return null;
+		GeneralResponse<GetServiceCountResponse> response = new GeneralResponse<>();
+		response.setMsg("retrieve success");
+		response.setStatus(0);
+		response.setData(new GetServiceCountResponse(50));
+		return response;
 	}
 	
 	
@@ -71,7 +80,10 @@ public class InternalApiController {
 			@RequestParam(name = "orderId", required = true) Integer orderId,
 			@RequestParam(name = "paymentStatus", required = true) String paymentStatus,
 			@RequestParam(name = "access_token", required = true) String access_token){
-		return null;
+		GeneralResponse response = new GeneralResponse<>();
+		response.setMsg("callback success");
+		response.setStatus(0);
+		return response;
 	}
 
 }

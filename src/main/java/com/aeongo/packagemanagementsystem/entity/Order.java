@@ -1,7 +1,7 @@
 package com.aeongo.packagemanagementsystem.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,8 +13,6 @@ import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
-
-//Last Updated by Chujia on 08/21/2018
 @Data
 @Entity
 @Table(name="order")
@@ -28,7 +26,10 @@ public class Order {
 	@NotNull
 	@Column(name="patient_id")
 	private Integer patientId;
-
+	
+	@NotNull
+	@Column(name="package_id")
+	private Integer packageId;
 	
 	@NotNull
 	@Column(name="plan_id")
@@ -42,14 +43,7 @@ public class Order {
 
 	
 	@Column(name="total_price")
-	private Integer totalPrice;
+	private BigDecimal totalPrice;
 	
-	@Column(name="order_status")
-	private Integer orderStatus;
 	
-	@Column(name="plan_start_date")
-	private Timestamp planStartDate;
-	
-	@Column(name="plan_end_date")
-	private Timestamp planEndDate;
 }
