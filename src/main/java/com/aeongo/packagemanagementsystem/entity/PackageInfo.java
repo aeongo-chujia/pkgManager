@@ -1,6 +1,7 @@
 package com.aeongo.packagemanagementsystem.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -25,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "package_info_latest")
 @IdClass(PackageInfoPK.class)
 public class PackageInfo implements Serializable{
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1231231L;
 	@Column(name = "package_id")
 	private Integer packageId;
 	
@@ -44,19 +45,22 @@ public class PackageInfo implements Serializable{
 	@Id
 	@Column(name = "plan_id")
 	private Integer planId;
-	
+	@Column(name = "plan_name")
+	private String planName;
 	@Column(name = "duration")
-	private String duration;
+	private Integer duration;
 	@Column(name = "plan_display_priority")
 	private String planDisplayPriority;
-	
+	@Column(name = "plan_description")
+	private String planDescription;
 	@Column(name = "plan_type")
 	private String planType;
 	@Column(name = "base_price")
-	private Number basePrice;
+	private BigDecimal basePrice;
 	@Column(name = "plan_shotdesc")
 	private String planShotdesc;
-	
+	@Column(name = "plan_picture")
+	private String planPicture;
 	@Id
 	@Column(name = "service_id")
 	private Integer serviceId;
@@ -72,7 +76,7 @@ public class PackageInfo implements Serializable{
 	@Column(name = "service_shotdesc")
 	private String serviceShotdesc;
 	@Column(name = "unit_price")
-	private String unitPrice;
+	private BigDecimal unitPrice;
 	
 	@Id
 	@Column(name = "doctor_id")

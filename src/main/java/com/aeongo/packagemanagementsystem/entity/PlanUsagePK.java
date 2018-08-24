@@ -15,17 +15,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Embeddable
 public class PlanUsagePK implements Serializable{
-	private static final long serialVersionUID = -1L;
-	@Id
-	@Column(name = "plan_id")
-	private Integer planId;
+	private static final long serialVersionUID = -11L;
 	@Id
 	@Column(name = "service_id")
 	private Integer serviceId;
 	@Id
-	@Column(name = "doctor_id")
-	private Integer doctorId = 0;
+	@Column(name = "plan_id")
+	private Integer planId;
 	@Id
 	@Column(name = "patient_id")
 	private Integer patientId;
+	@Id
+	@Column(name = "doctor_id")
+	private Integer doctorId=0;
 }

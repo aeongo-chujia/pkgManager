@@ -43,6 +43,8 @@ public class Package {
 	@Column(name="picture")
 	private String picture;
 	
+	@Column(name="age_range")
+	private String ageRange;
 //	@Column(name="package_display_priority")
 //	private String packageDisplayPriority;
 	

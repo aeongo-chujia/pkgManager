@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Embeddable
 public class PackageInfoPK implements Serializable{
-	private static final long serialVersionUID = -1L;
+	private static final long serialVersionUID = 1231231L;
 	@Id
 	@Column(name = "plan_id")
 	private Integer planId;
