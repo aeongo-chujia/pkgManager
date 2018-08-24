@@ -16,15 +16,6 @@ public class RecommendationRequest {
 	public static class ActorTag{
 		private String actorTagCategory;
 		private String actorTagValue;
-		
-		public ActorTag(String actorTagCategory,String actorTagValue) {
-			this.actorTagCategory = actorTagCategory;
-			this.actorTagValue = actorTagValue;
-		}
-		
-		public ActorTag() {
-			
-		}
 	}
 
 }

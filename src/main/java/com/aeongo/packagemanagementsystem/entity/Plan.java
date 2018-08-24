@@ -46,8 +46,8 @@ public class Plan {
 	@Column(name="short_description")
 	private String shortDescription;
 	
-	@Column(name="picture")
-	private String picture;
+	@Column(name="plan_picture")
+	private String planPicture;
 	
 	@Column(name="plan_display_priority")
 	private String planDisplayPriority;
@@ -61,6 +61,8 @@ public class Plan {
 	@Column(name="plan_id_that_is_upgradeable_to")
 	private Integer planIdThatIsUpgradeableTo;
 	
+	@Column(name="package_id")
+	private Integer packageId;
 	
 	public Plan() {
 		

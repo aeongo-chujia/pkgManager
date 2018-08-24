@@ -3,10 +3,11 @@ package com.aeongo.packagemanagementsystem.service;
 import java.util.List;
 import java.util.Map;
 
-import com.aeongo.packagemanagementsystem.request.RecommendationRequest;
-import com.aeongo.packagemanagementsystem.response.DoctorInfoResponse;
-import com.aeongo.packagemanagementsystem.response.PatientInfoResponse;
+import org.springframework.stereotype.Service;
 
+import com.aeongo.packagemanagementsystem.request.RecommendationRequest;
+//import com.aeongo.packagemanagementsystem.response.DoctorInfoResponse;
+@Service
 public interface EmrInformationService {
 	
 	public Integer getPatientAgeByYear(Integer patientId);
@@ -15,8 +16,7 @@ public interface EmrInformationService {
 	public List<RecommendationRequest.ActorTag> getTagsByDoctor(Integer doctorId);
 	public List<Integer> getAssociatedDoctorsByPatient(Integer patientId);
 	public String getDoctorName(Integer doctorId);
-	public DoctorInfoResponse getDoctorInfo(Integer doctorId);
-	public PatientInfoResponse getPatientInfo(Integer patientId);
+	//public DoctorInfoResponse getDoctorInfo(Integer doctorId);
 	public Boolean VerifyDoctorExistence(Integer doctorId);
 	
 }
