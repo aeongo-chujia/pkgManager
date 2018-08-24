@@ -1,50 +1,57 @@
 package com.aeongo.packagemanagementsystem.entity;
 
-import java.io.Serializable;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="order_service_usage")
-@IdClass(OrderServiceUsage.PK.class)
+@Table(name = "order_service_usage")
 public class OrderServiceUsage {
+	public void setData(Integer patientId, Integer doctorId, Integer planId, Integer serviceId,
+			Timestamp time) {
+		this.id = 0;
+		this.serviceId = serviceId;
+		this.patientIdd = patientId;
+		this.doctorId = doctorId;
+		this.planId = planId;
+		this.usedDate = time;
+	}
 
 	@Id
-	@Column(name="order_id")
-	private Integer orderId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
+	Integer id = 0;
 	
-	@Id
-	@Column(name="service_id")
-	private Integer serviceId;
+	@Column(name = "service_id")
+	Integer serviceId;
 	
-	@Column(name="usage_count")
-	private Integer usageCount;
+	 
+	@Column(name = "plan_id")
+	Integer planId;
+	 
+	@Column(name = "patient_id")
+	Integer patientIdd;
+	 
+	@Column(name = "doctor_id")
+	Integer doctorId;
 	
-	@Column(name="usage_count_remaining")
-	private Integer usageCountRemaining;
-	
-	
-	public static class PK implements Serializable {
-		protected Integer orderId;
-		protected Integer serviceId;
-		
-		protected PK() {}
-		
-		public PK(Integer orderId,Integer serviceId) {
-			super();
-			this.orderId = orderId;
-			this.serviceId = serviceId;
-		}
-	}
-	
-	
+	@Column(name = "used_date")
+	Timestamp usedDate;
 }

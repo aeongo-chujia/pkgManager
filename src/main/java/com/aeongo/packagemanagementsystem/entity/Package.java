@@ -17,7 +17,7 @@ import javax.persistence.UniqueConstraint;
 
 import lombok.Data;
 
-
+//Last Updated by Chujia on 08/21/2018
 @Data
 @Entity
 @Table(name="package")
@@ -43,8 +43,10 @@ public class Package {
 	@Column(name="picture")
 	private String picture;
 	
-	@Column(name="package_display_priority")
-	private String packageDisplayPriority;
+	@Column(name="age_range")
+	private String ageRange;
+//	@Column(name="package_display_priority")
+//	private String packageDisplayPriority;
 	
 	@Column(name="age_range")
 	private String ageRange;

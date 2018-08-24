@@ -34,5 +34,9 @@ public class RecommendationServiceImpl implements RecommendationService {
 		List<Integer> packages = result.getData().stream().map(model -> Integer.parseInt(model.getItemId())).collect(Collectors.toList());
 		return packages;
 	}
-
+	@Override
+	public List<Integer> getRecommendationServicesByTags(List<ActorTag> tags) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
