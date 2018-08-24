@@ -1,6 +1,7 @@
 package com.aeongo.packagemanagementsystem.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -42,7 +43,7 @@ public class Order {
 
 	
 	@Column(name="total_price")
-	private Integer totalPrice;
+	private BigDecimal totalPrice;
 	
 	
 }

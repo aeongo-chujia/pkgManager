@@ -10,7 +10,7 @@ public interface PackageAndServiceSelectorService {
 	
 	public ServiceSelectorResponse mentalHealthServiceSelectorService(Integer patientId);
 	
-	public PackageSelectorResponse packageSelectorService(Integer patientId,Integer doctorId);
+	public PackageSelectorResponse packageSelectorService(Integer patientId,String access_token);
 	
 
 }

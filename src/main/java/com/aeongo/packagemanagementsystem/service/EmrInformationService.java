@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.aeongo.packagemanagementsystem.request.RecommendationRequest;
 import com.aeongo.packagemanagementsystem.response.DoctorInfoResponse;
+import com.aeongo.packagemanagementsystem.response.PatientInfoResponse;
 
 public interface EmrInformationService {
 	
@@ -15,6 +16,7 @@ public interface EmrInformationService {
 	public List<Integer> getAssociatedDoctorsByPatient(Integer patientId);
 	public String getDoctorName(Integer doctorId);
 	public DoctorInfoResponse getDoctorInfo(Integer doctorId);
+	public PatientInfoResponse getPatientInfo(Integer patientId);
 	public Boolean VerifyDoctorExistence(Integer doctorId);
 	
 }
