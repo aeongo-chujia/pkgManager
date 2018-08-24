@@ -9,7 +9,7 @@ import lombok.Data;
 
 
 @Data
-public class VerificationResponse {
+public class ValidationResponse {
 
 	
 	private String msg;

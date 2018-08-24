@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.aeongo.packagemanagementsystem.response.VerificationResponse;
+import com.aeongo.packagemanagementsystem.response.ValidationResponse;
 import com.aeongo.packagemanagementsystem.service.ValidationService;
 
 
@@ -22,7 +22,7 @@ private RestTemplate restTemplate;
 	@Override
 	public Boolean accessTokenVerification(Integer patientId, String access_token) {
 		String request = emrAccessTokenUrl + "?patient_id=" + patientId + "&access_token=" + access_token;
-		VerificationResponse result = restTemplate.getForObject(request, VerificationResponse.class);
+		ValidationResponse result = restTemplate.getForObject(request, ValidationResponse.class);
 		return result.getStatus() == 0;
 	}
 
